@@ -22,7 +22,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 
         Category cat2 = new()
         {
-            Id = 1,
+            Id = 2,
             Name = "Moda",
             Priority = 2,
             ParentId = 0           

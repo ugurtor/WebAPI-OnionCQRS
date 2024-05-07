@@ -1,3 +1,4 @@
+using Onion.Persistance;
 
 namespace Onion.API;
 
@@ -19,6 +20,8 @@ public class Program
         builder.Configuration.SetBasePath(env.ContentRootPath)
             .AddJsonFile("appsettings.json",optional:false)
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional:true);
+
+        builder.Services.AddPersistance(builder.Configuration);
 
         var app = builder.Build();
 
