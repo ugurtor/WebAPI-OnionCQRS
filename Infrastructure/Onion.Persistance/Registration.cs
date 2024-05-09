@@ -2,8 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Onion.Application.Interfaces.Repositories;
+using Onion.Application.Interfaces.UnitOfWorks;
 using Onion.Persistance.Context;
 using Onion.Persistance.Repositories;
+using Onion.Persistance.UnitOfWorks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +21,7 @@ public static class Registration
 
         service.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
         service.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+
+        service.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }
