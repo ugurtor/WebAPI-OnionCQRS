@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Onion.Application.Interfaces.Repositories;
 using Onion.Persistance.Context;
+using Onion.Persistance.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ public static class Registration
     {
         service.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-        service.AddScoped(typeof(IReadRepository<>), typeof(IReadRepository<>));
+        service.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
+        service.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
     }
 }
