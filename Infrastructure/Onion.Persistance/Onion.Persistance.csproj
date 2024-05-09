@@ -14,9 +14,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="System.Linq.Async" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Onion.Application\Onion.Application.csproj" />
     <ProjectReference Include="..\..\Core\Onion.Domain\Onion.Domain.csproj" />
   </ItemGroup>
 
