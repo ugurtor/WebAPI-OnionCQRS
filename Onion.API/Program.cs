@@ -1,5 +1,5 @@
 using Onion.Persistance;
-
+using Onion.Application;
 namespace Onion.API;
 
 public class Program
@@ -22,6 +22,7 @@ public class Program
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional:true);
 
         builder.Services.AddPersistance(builder.Configuration);
+        builder.Services.AddApplication();
 
         var app = builder.Build();
 
