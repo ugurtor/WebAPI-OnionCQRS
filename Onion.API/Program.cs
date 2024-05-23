@@ -1,5 +1,6 @@
 using Onion.Persistance;
 using Onion.Application;
+using Onion.Mapper;
 namespace Onion.API;
 
 public class Program
@@ -23,6 +24,7 @@ public class Program
 
         builder.Services.AddPersistance(builder.Configuration);
         builder.Services.AddApplication();
+        builder.Services.AddCustomMapper();
 
         var app = builder.Build();
 

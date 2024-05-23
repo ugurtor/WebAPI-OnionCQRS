@@ -1,38 +1,34 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Onion.Application.DTOs;
+using Onion.Application.Interfaces.AutoMapper;
 using Onion.Application.Interfaces.UnitOfWorks;
 using Onion.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Onion.Application.Features.Products.Queries.GetAllProducts;
 public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQueryRequest, IList<GetAllProductsQueryResponse>>
 {
     private readonly IUnitOfWork unitOfWork;
+    private readonly IMapper mapper;
 
-    public GetAllProductsQueryHandler(IUnitOfWork unitOfWork)
+    public GetAllProductsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
     {
         this.unitOfWork = unitOfWork;
+        this.mapper = mapper;
     }
     public async Task<IList<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
     {
-        var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync();
+        var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync(include: x => x.Include(b => b.Brand));
 
-        List<GetAllProductsQueryResponse> responses = new List<GetAllProductsQueryResponse>();
+        mapper.Map<BrandDto>(new Brand());
 
-        foreach (var item in products)
+        var map = mapper.Map<GetAllProductsQueryResponse, Product>(products);        
+
+        foreach (var item in map)
         {
-            responses.Add(new GetAllProductsQueryResponse
-            {
-                Title = item.Title,
-                Description = item.Description,
-                Discount = item.Discount,
-                Price = item.Price
-            });
+            item.Price -= (item.Price * item.Discount / 100);
         }
 
-        return responses;
+        return map;
     }
 }

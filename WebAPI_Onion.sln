@@ -9,15 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B0BA7DBD-CF67-4BBC-9344-905365D97627}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Application", "Core\Onion.Application\Onion.Application.csproj", "{216D726C-9199-45B1-B2A2-D4BD34CA8F62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.Application", "Core\Onion.Application\Onion.Application.csproj", "{216D726C-9199-45B1-B2A2-D4BD34CA8F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Domain", "Core\Onion.Domain\Onion.Domain.csproj", "{210E209A-50E8-4EE0-85DB-3FE26966AF36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.Domain", "Core\Onion.Domain\Onion.Domain.csproj", "{210E209A-50E8-4EE0-85DB-3FE26966AF36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Infrastructure", "Infrastructure\Onion.Infrastructure\Onion.Infrastructure.csproj", "{BC80D881-E47A-4B37-957E-782FAB6C051E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.Infrastructure", "Infrastructure\Onion.Infrastructure\Onion.Infrastructure.csproj", "{BC80D881-E47A-4B37-957E-782FAB6C051E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Persistance", "Infrastructure\Onion.Persistance\Onion.Persistance.csproj", "{D35D1554-3334-4AFD-BA08-E18AF4EDF786}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.Persistance", "Infrastructure\Onion.Persistance\Onion.Persistance.csproj", "{D35D1554-3334-4AFD-BA08-E18AF4EDF786}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.API", "Onion.API\Onion.API.csproj", "{371FA289-175A-4E55-9E3C-ED8ACFEDD6F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.API", "Onion.API\Onion.API.csproj", "{371FA289-175A-4E55-9E3C-ED8ACFEDD6F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Mapper", "Onion.Mapper\Onion.Mapper.csproj", "{90729F3B-0E9F-45B9-B993-B58C9ED47882}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{371FA289-175A-4E55-9E3C-ED8ACFEDD6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{371FA289-175A-4E55-9E3C-ED8ACFEDD6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{371FA289-175A-4E55-9E3C-ED8ACFEDD6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90729F3B-0E9F-45B9-B993-B58C9ED47882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90729F3B-0E9F-45B9-B993-B58C9ED47882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90729F3B-0E9F-45B9-B993-B58C9ED47882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90729F3B-0E9F-45B9-B993-B58C9ED47882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{BC80D881-E47A-4B37-957E-782FAB6C051E} = {508FE3E8-412C-4854-800F-ECE35CBB5EEB}
 		{D35D1554-3334-4AFD-BA08-E18AF4EDF786} = {508FE3E8-412C-4854-800F-ECE35CBB5EEB}
 		{371FA289-175A-4E55-9E3C-ED8ACFEDD6F8} = {B0BA7DBD-CF67-4BBC-9344-905365D97627}
+		{90729F3B-0E9F-45B9-B993-B58C9ED47882} = {D63F7D4F-1176-4295-A8B6-FE55B145FC63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6B8BA16-AB14-4E45-81E2-E99CA2B2E2A0}
