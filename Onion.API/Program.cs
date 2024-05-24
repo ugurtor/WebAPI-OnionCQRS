@@ -1,6 +1,7 @@
 using Onion.Persistance;
 using Onion.Application;
 using Onion.Mapper;
+using Onion.Application.Exceptions;
 namespace Onion.API;
 
 public class Program
@@ -35,6 +36,7 @@ public class Program
             app.UseSwaggerUI();
         }
 
+        app.ConfigureExceptionHandlingMiddleware();
         app.UseAuthorization();
 
 

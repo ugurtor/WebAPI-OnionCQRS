@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Onion.Application.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ public static class Registration
     public static void AddApplication(this IServiceCollection services)
     {
         var assembly = Assembly.GetExecutingAssembly();
+
+        services.AddTransient<ExceptionMiddleware>();
 
         services.AddMediatR(c => c.RegisterServicesFromAssembly(assembly));
     }
